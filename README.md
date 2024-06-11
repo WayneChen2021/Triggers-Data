@@ -5,7 +5,7 @@ Data for paper "Are Triggers Needed for Document-Level Event Extraction"
 
 MUC data is all contained in [`all_splits.json`](data/MUC/all_splits.json). IDs `TST4-*` and `TST3-*` were used for evaluation; IDs `TST2-*` and `TST1-*` were used for evaluation; everything else was for training.
 
-WikiEvents data is split up [here](WikiEvents)
+WikiEvents data is split up [here](data/WikiEvents)
 
 The data is a dictionary, where each entry is
 ```
