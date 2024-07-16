@@ -32,23 +32,26 @@ def minimize_variance(template, pronouns_file="pronouns.txt"):
     minimal_variance = 2e10
     chosen_args = {}
     args_mean_pos = 0
-    for trig_type, trig_annotations in template.items():
-        if "Trig" in trig_type:
-            chosen_args[trig_type] = [
-                min(
-                    trig_annotations,
-                    key=lambda annotation: np.abs(annotation[0][1] - args_mean_pos),
-                )
-            ]
-            assert len(chosen_args[trig_type]) == 1
+    def assign_trig():
+        for trig_type, trig_annotations in template.items():
+            if "Trig" in trig_type:
+                chosen_args[trig_type] = [
+                    min(
+                        trig_annotations,
+                        key=lambda annotation: np.abs(annotation[0][1] - args_mean_pos),
+                    )
+                ]
+                assert len(chosen_args[trig_type]) == 1
 
     if not len(options):
+        assign_trig()
         return 0, chosen_args
 
     for comb_ in product(*options):
         comb = [i[1] for i in comb_]
         var = np.var(comb)
         if var < minimal_variance:
+            chosen_args = {}
             minimal_variance = var
             args_mean_pos = 0
             for i in comb_:
@@ -61,6 +64,7 @@ def minimize_variance(template, pronouns_file="pronouns.txt"):
                     args_mean_pos += i[1]
             args_mean_pos /= len(comb_)
 
+    assign_trig()
     return minimal_variance, chosen_args
 
 
