@@ -1,0 +1,23 @@
+{
+    "event_type_names": [
+        "Experiment", 
+        "Manoeuvre", 
+        "Support", 
+        "Accident", 
+        "Deploy", 
+        "Exhibit", 
+        "Conflict", 
+        "Injure"
+    ],
+    "role_names": [
+        "Subject", 
+        "Equipment",
+        "Date",
+        "Location",
+        "Content",
+        "Object",
+        "Militaryforce",
+        "Quantity",
+        "Result"
+    ]
+}
