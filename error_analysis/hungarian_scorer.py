@@ -234,7 +234,7 @@ def main(config, in_file, relax_match, out_file, filter_lst):
     }
 
     with open(out_file, 'w') as f:
-        f.write(json.dumps(info_dic))
+        f.write(json.dumps(info_dic, indent=2))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
