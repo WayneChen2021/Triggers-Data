@@ -4,6 +4,8 @@ import json
 from scipy.optimize import linear_sum_assignment
 
 def is_match(str1, str2, relax):
+    str1 = str1.lower()
+    str2 = str2.lower()
     if str1 == str2:
         return True
 
