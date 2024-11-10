@@ -1,4 +1,3 @@
 *.ipynb
 venv
 __pycache__
-data/CMNEE_gtt_files

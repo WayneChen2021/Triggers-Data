@@ -7,6 +7,8 @@ MUC data is all contained in [`all_splits.json`](data/MUC/all_splits.json). IDs 
 
 WikiEvents data is split up [here](data/WikiEvents)
 
+The translated CMNEE data is split up [here](data/CMNEE)
+
 The data is a dictionary, where each entry is
 ```
 <document id>: {
@@ -61,6 +63,9 @@ The data is a dictionary, where each entry is
                 ...
             ],
             "LLM_Trig": [
+                ...
+            ],
+            "Random_Trig": [
                 ...
             ]
         }
